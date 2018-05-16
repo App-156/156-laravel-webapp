@@ -51,3 +51,10 @@ Route::get('cityhall/isCity/{cityname}', function ($cityname) {
                         ->get();
     return $city;
 });
+
+Route::get('requests/byCitizen/{citizenid}', function ($cityzenid) {
+    $requests = \DB::table('Request')
+                        ->where('Request.CitizenID', '=', $cityzenid)
+                        ->get();
+    return $requests;
+});
